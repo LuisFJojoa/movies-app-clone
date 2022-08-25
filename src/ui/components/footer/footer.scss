@@ -2,7 +2,7 @@
 
 .footer {
     position: relative;
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,11 +13,16 @@
         &__logo {
             @include flex(center, center);
             margin-bottom: 3rem;
+
+            @include mobile{
+                margin-bottom: 1rem;
+            }
         }
 
         &__menus {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            margin-bottom: -1rem;
 
             @include mobile {
                 grid-template-columns: repeat(1, 1fr);

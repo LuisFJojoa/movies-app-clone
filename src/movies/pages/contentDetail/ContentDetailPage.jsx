@@ -10,6 +10,10 @@ import {MovieList} from '../../components';
 
 import './contentDetailPage.scss';
 
+import notContentBg from '../../../assets/notContentBg.jpg'
+import notContentCharacter from '../../../assets/notContentCharacter.jpg'
+import { NotFoundPage } from '../NotFoundPage';
+
 export const ContentDetailePage = () => {
 
     const { category, id } = useParams();
@@ -28,7 +32,9 @@ export const ContentDetailePage = () => {
     return (
         <>
             {
-                item && (
+                item 
+                ? 
+                (
                     <>
                         <div className="banner" style={{backgroundImage: `url(${apiConfig.originalImage(item.backdrop_path || item.poster_path)})`}}></div>
                         <div className="mb-3 movie-content">
@@ -68,6 +74,23 @@ export const ContentDetailePage = () => {
                         </div>
                     </>
                 )
+                :
+                <div>
+                    <div className="banner" style={{backgroundImage: `url(${notContentBg})`}}></div>
+                        <div className="mb-3 movie-content">
+                            <div className="movie-content__poster">
+                                <div className="movie-content__poster__img" style={{backgroundImage: `url(${notContentCharacter})`}}></div>
+                            </div>
+                            <div className="movie-content__info">
+                                <h1 className="title">
+                                    OOPS! {category === 'tv' ? 'SERIE' : 'MOVIE'} NOT FOUND.
+                                </h1>
+                                <p className="overview">Check that you typed the address correctly, go back to your previous page or try using our site search to find something specific.</p>
+                            </div>
+                        </div>
+                        <div style={{height: '20vh'}}>
+                        </div>
+                </div>
             }
         </>
     );

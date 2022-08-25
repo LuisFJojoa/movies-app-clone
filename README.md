@@ -8,8 +8,8 @@ Jojo movies es una SPA (Single Page Application) basada en contenido multimedia 
 * Visualizar series según categoría seleccionada.
 * Visualizar películas según categoría seleccionada.
 * Realizar búsqueda de series o películas por coincidencias en sus nombres.
-* Visualizar detalle de una película seleccionada.
-* Visualizar detalle de una serie seleccionada.
+* Visualizar más información de una película seleccionada.
+* Visualizar más información de una serie seleccionada.
 
 ## Stack tecnológico utilizado
 

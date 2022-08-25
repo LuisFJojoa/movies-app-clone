@@ -35,8 +35,8 @@ export const Header = () => {
   const {setHeaderTitle}  = useContext(MovieContext)
 
   const handleLinkClick = (title) => {
-    setHeaderTitle(title)
-    localStorage.setItem('headerTitle', title)
+    setHeaderTitle(title);
+    localStorage.setItem('headerTitle', title !== 'Home' && title);
   };
 
   const onLogout = () => {
