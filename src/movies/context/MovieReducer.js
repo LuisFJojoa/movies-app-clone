@@ -6,7 +6,7 @@ export const MovieReducer = (state = {}, action) => {
   switch (action.type) {
     case types.setTitle:
       return {
-        title: action.payload
+        headerTitle: action.payload
       }
 
     default:

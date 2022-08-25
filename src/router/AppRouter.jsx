@@ -6,6 +6,7 @@ import { Header, Footer } from "../ui/components/"
 import { PrivateRoute, PublicRoute } from "./"
 
 export const AppRouter = () => {
+
   return (
     <>
       <Routes>
@@ -20,8 +21,8 @@ export const AppRouter = () => {
             <MovieProvider>
               <Header />
               <MoviesRoutes />
+              <Footer />
             </MovieProvider>
-            <Footer />
           </PrivateRoute>
         } />
 

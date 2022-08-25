@@ -11,10 +11,11 @@ export const MovieProvider = ({ children }) => {
     const title = localStorage.getItem('headerTitle')
     
     return {
-      title: title
+      headerTitle: title,
+      response: false
     }
   }
-  const [header, dispatch] = useReducer(MovieReducer, initialState, initializer)
+  const [movieState, dispatch] = useReducer(MovieReducer, initialState, initializer)
 
 
   const setHeaderTitle = (title = '') => {
@@ -23,11 +24,18 @@ export const MovieProvider = ({ children }) => {
     dispatch(action)
   }
 
+  const setReponse = (state = false) => {
+
+    const action = { type: types.setResponse, payload: state}
+    dispatch(action)
+  }
+
 
   return (
     <MovieContext.Provider value={{
-      header,
-      setHeaderTitle
+      ...movieState,
+      setHeaderTitle,
+      setReponse
     }}>
       {children}
     </MovieContext.Provider>

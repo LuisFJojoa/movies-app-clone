@@ -1,5 +1,6 @@
 
 export const types = {
-  setTitle: '[Movies] Set Title'
+  setTitle: '[Movies] Set Title',
+  setReponse: '[Movies] Set Response'
 
 }
