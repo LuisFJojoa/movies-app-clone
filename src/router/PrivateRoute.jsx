@@ -8,6 +8,7 @@ export const PrivateRoute = ({ children }) => {
 
   // To save last position
   const { pathname, search } = useLocation()
+  console.log(pathname);
   const lastPath = pathname + search
   localStorage.setItem('lastPath', lastPath)
   

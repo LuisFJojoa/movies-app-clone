@@ -17,7 +17,7 @@ export const MovieCard = props => {
 
     return (
         <Link to={link}>
-            <div className="movie-card" style={{backgroundImage:  `url( ${ (bg) && bg })`}}>
+            <div className="movie-card" loading="lazy" style={{backgroundImage:  `url( ${ (bg) && bg })`}}>
                 <Button>
                     <i className="bx bx-play"></i>
                 </Button>

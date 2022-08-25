@@ -34,12 +34,12 @@ export const ContentDetailePage = () => {
             {
                 item 
                 ? 
-                (
+                
                     <>
-                        <div className="banner" style={{backgroundImage: `url(${apiConfig.originalImage(item.backdrop_path || item.poster_path)})`}}></div>
+                        <div className="banner" loading="lazy" style={{backgroundImage: `url(${apiConfig.originalImage(item.backdrop_path || item.poster_path)})`}}></div>
                         <div className="mb-3 movie-content">
                             <div className="movie-content__poster">
-                                <div className="movie-content__poster__img" style={{backgroundImage: `url(${apiConfig.originalImage(item.poster_path || item.backdrop_path)})`}}></div>
+                                <div className="movie-content__poster__img" loading="lazy" style={{backgroundImage: `url(${apiConfig.originalImage(item.poster_path || item.backdrop_path)})`}}></div>
                             </div>
                             <div className="movie-content__info">
                                 <h1 className="title">
@@ -69,11 +69,11 @@ export const ContentDetailePage = () => {
                                 <div className="section__header mb-2">
                                     <h2>Similar</h2>
                                 </div>
-                                <MovieList category={category} type="similar" id={item.id}/>
+                                <MovieList title url category={category} type="similar" id={item.id}/>
                             </div>
                         </div>
                     </>
-                )
+                
                 :
                 <div>
                     <div className="banner" style={{backgroundImage: `url(${notContentBg})`}}></div>
